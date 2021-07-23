@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
+using Etapa1.App;
 using static System.Console;
 
 namespace CoreEscuela
@@ -14,8 +15,11 @@ namespace CoreEscuela
             var engine = new EscuelaEngine();
             engine.Inicializar();
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
-            Printer.Beep(10000, cantidad:2);
-           // ImpimirCursosEscuela(engine.Escuela);
+            Printer.Beep(10000, cantidad:1);
+            // ImpimirCursosEscuela(engine.Escuela);
+
+            var reporteador = new Reporteador(engine.GetDiccionarioObjetos());
+            
 
             Printer.WriteTitle("Diccionario");
 
