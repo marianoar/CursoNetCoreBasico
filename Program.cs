@@ -19,13 +19,18 @@ namespace CoreEscuela
             // ImpimirCursosEscuela(engine.Escuela);
 
             var reporteador = new Reporteador(engine.GetDiccionarioObjetos());
-            
+            var evalLista= reporteador.GetListaEvaluaciones();
+            var asigLista = reporteador.GetListaAsignaturas();
+
+            var listaEvalXAsig = reporteador.GetDicEvaluacionesXAsignaturas();
+
+            var listaPromedioXAsig = reporteador.GetPromedioAlumnoXAsignatura();
 
             Printer.WriteTitle("Diccionario");
 
 
             var dictmp = engine.GetDiccionarioObjetos();
-            engine.ImprimirDicc(dictmp, true);
+           //  engine.ImprimirDicc(dictmp, true);
         }
 
         private static void ImpimirCursosEscuela(Escuela escuela)
